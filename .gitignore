@@ -1,0 +1,7 @@
+node_modules/
+*.log
+.DS_Store
+# 本地 PHP 工具链(不进仓库)
+.tools/
+# 构建产物
+dist/

@@ -1,0 +1,9 @@
+{
+  "name": "mayuan-knowledge-universe",
+  "version": "1.0.0",
+  "private": true,
+  "description": "独立运行的马原知识地图与知识星球",
+  "scripts": {"start": "node scripts/serve.cjs", "build": "node scripts/build.cjs", "test": "node --test tests/*.test.cjs"},
+  "engines": {"node": ">=18"},
+  "license": "UNLICENSED"
+}

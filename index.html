@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f6f1">
+  <meta name="description" content="探索马克思主义基本原理：知识地图、知识星球、概念辨析、关系实验与主动回忆。">
+  <title>马原知识宇宙 · 学习工作台</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <a class="skip" href="#workspace">跳到知识画布</a>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="马原知识宇宙首页"><span class="brand-mark">原</span><span>马原<span class="brand-divider"> / </span><strong>知识宇宙</strong></span><span class="edition">独立版</span></a>
+    <div class="search-box"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="搜索概念、原理或关键词…" autocomplete="off" maxlength="100" aria-label="搜索知识点" aria-controls="search-results"><kbd>Ctrl K</kbd><div id="search-results" class="search-results" hidden></div></div>
+    <div class="header-actions"><button id="motion-toggle" class="icon-btn" title="切换动态效果" aria-label="关闭动态效果" aria-pressed="false">◌</button><button id="progress-open" class="btn subtle">我的复习 <span aria-hidden="true">↗</span></button></div>
+  </header>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="知识导航">
+      <div class="sidebar-intro"><span class="eyebrow">MARXISM · KNOWLEDGE ATLAS</span><h1>把知识<br>连成理解<span>。</span></h1><p>从一个概念，走向整个体系。</p></div>
+      <div class="nav-heading">知识领域 <span>07</span></div>
+      <nav id="module-nav"></nav>
+      <div class="sidebar-divider"></div>
+      <div class="nav-heading">学习工具</div>
+      <nav class="tool-nav"><button data-tool="compare"><span>⇄</span>概念辨析台</button><button data-tool="lab"><span>⌘</span>关系实验室</button><button data-tool="recall"><span>◈</span>主动回忆</button><button data-tool="quiz"><span>▤</span>练习入口</button></nav>
+      <div class="sidebar-bottom"><div class="progress-heading"><span>自评掌握</span><strong id="mastery-count">0 / 0</strong></div><div class="progress-track"><span id="mastery-bar"></span></div><p>浏览、掌握与练习分别记录</p><button id="export-btn" class="text-button">导出进度 ↗</button><button id="import-btn" class="text-button">导入进度 ↙</button></div>
+    </aside>
+    <main id="workspace" class="workspace" tabindex="-1">
+      <div class="workspace-heading"><div><div id="breadcrumb" class="breadcrumb">知识宇宙 <span>/</span> 全局概览</div><h2 id="view-title">每个原理，都有来处。</h2><p id="view-subtitle">沿着联系探索，让零散知识成为一个整体。</p></div><div class="view-switch" role="group" aria-label="知识视图"><button id="map-view" class="active" aria-pressed="true">⌘ 知识地图</button><button id="star-view" aria-pressed="false">✧ 知识星球</button></div></div>
+      <section class="graph-card" aria-label="交互知识图谱">
+        <div class="graph-toolbar"><span id="graph-caption">全局视野 <span class="muted">· 选择一个领域开始探索</span></span><div><select id="relation-filter" class="relation-filter" aria-label="筛选关系类型"><option value="all">全部关系</option></select><button id="cross-toggle" class="small-toggle" aria-pressed="false">跨领域联系</button><button id="list-toggle" class="icon-btn" aria-label="打开知识点列表" title="知识点列表">☷</button></div></div>
+        <div id="graph-viewport" class="graph-viewport"><svg id="graph" viewBox="0 0 1100 740" role="group" aria-label="知识地图，可用方向导航列表访问节点"></svg><div class="graph-watermark" aria-hidden="true">KNOWLEDGE<br>IS CONNECTED.</div><div id="node-list" class="node-list" hidden></div></div>
+        <div class="graph-footer"><div class="graph-legend"><span><i class="legend-dot"></i>知识节点</span><span><i class="legend-line"></i>理论联系</span><span><i class="legend-dash"></i>跨领域</span></div><div class="zoom-controls"><button id="zoom-out" aria-label="缩小">−</button><span id="zoom-value">100%</span><button id="zoom-in" aria-label="放大">＋</button><button id="zoom-reset" aria-label="重置视角" title="重置视角">⌖</button></div></div>
+      </section>
+      <div class="learning-strip"><button data-tool="compare"><span class="strip-icon mint">⇄</span><span><strong>分清相似概念</strong><small>把容易混淆的边界看清</small></span><span class="strip-arrow">↗</span></button><button data-tool="lab"><span class="strip-icon sand">⌘</span><span><strong>让原理动起来</strong><small>改变条件，观察关系</small></span><span class="strip-arrow">↗</span></button><button data-tool="recall"><span class="strip-icon lavender">◈</span><span><strong>试着回忆一次</strong><small>从看懂到主动想起</small></span><span class="strip-arrow">↗</span></button></div>
+      <p class="workspace-note"><span id="data-count">正在加载知识资料</span><span>本地保存 · 核心功能离线可用</span></p>
+    </main>
+    <aside id="detail-panel" class="detail-panel" aria-label="知识详情"><div class="detail-empty"><div class="empty-orbit">✧</div><span class="eyebrow">FOLLOW YOUR CURIOSITY</span><h2>从一个问题开始</h2><p>选择地图中的知识点，查看原理、方法论和它与其他概念的联系。</p><button class="btn primary" id="start-practice" data-node="practice">从“实践”开始 ↗</button><div class="empty-prompt"><small>今日思考</small><p>为什么说实践是检验真理的唯一标准？</p></div></div></aside>
+  </div>
+  <dialog id="learning-dialog" aria-labelledby="dialog-title"><div class="dialog-header"><div><span id="dialog-eyebrow" class="eyebrow">LEARNING STUDIO</span><h2 id="dialog-title">学习工作室</h2></div><button id="dialog-close" class="icon-btn" aria-label="关闭学习面板">×</button></div><div id="dialog-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <input id="import-file" type="file" accept=".json,application/json" hidden>
+  <noscript><p class="noscript">请启用 JavaScript 以使用交互知识图谱。</p></noscript>
+  <script src="assets/data.js"></script>
+  <script src="assets/core.js"></script>
+  <script src="assets/guanlan-adapter.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
